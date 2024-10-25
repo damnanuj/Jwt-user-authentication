@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import homeRoutes from "./routes/homeRoute.js"
 import authRoutes from "./routes/authRoute.js";
 import dashboardRoutes from "./routes/dashboardRoute.js"
 
@@ -17,6 +18,8 @@ app.use(express.json()); //json body parser
 app.use(cookieParser()); //cookie parser
 app.use(express.urlencoded({extended:true})) //to parse data url encoded (form)
 
+//APIS
+app.use("/", homeRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/user",dashboardRoutes);
 
