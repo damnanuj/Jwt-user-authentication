@@ -24,6 +24,6 @@ app.use("/api/auth", authRoutes);
 app.use("/api/user",dashboardRoutes);
 
 app.listen(PORT, () => {
-  console.log(`Server is Running on PORT : ${PORT}`);
+  console.log(`Server is Running on : http://localhost:${PORT}`);
   connectMongoDb();
 });
